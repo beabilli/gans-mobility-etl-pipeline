@@ -1,6 +1,7 @@
-# 🛴 Gans Scooters: Data Engineering & Analytics Pipeline
+# 🛴 Gans Scooters: Data Engineering & Analytics Course Project
 
-Welcome to the repository for my final project as a **Data Analyst** for **Gans**, an innovative sustainable mobility startup providing electric scooter (e-scooter) sharing services across major global cities.
+Welcome to the repository for my **Data Analytics course project** focused on **Gans**, an innovative sustainable mobility startup providing electric scooter (e-scooter) sharing services across major global cities.
+
 
 ## 🎯 Project Objective
 Gans' operational success relies on one critical factor: **ensuring scooters are parked exactly where users actually need them**. Asymmetric real-world factors—such as morning commuter flows, adverse weather conditions, or low-cost tourist arrivals—constantly shift the fleet in a highly unorganized manner.
