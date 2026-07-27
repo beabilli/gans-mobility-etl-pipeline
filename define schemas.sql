@@ -1,5 +1,5 @@
 -- =====================================================================
--- COMPLETE AND DEFINITIVE DATABASE SCHEMA FOR GANS PROJECT
+-- COMPLETE AND DEFINITIVE DATABASE SCHEMA FOR GANS PROJECT (ICAO COMPLIANT)
 -- =====================================================================
 
 DROP DATABASE IF EXISTS gans_database;
@@ -26,11 +26,11 @@ CREATE TABLE population (
     FOREIGN KEY (city_id) REFERENCES city(city_id) ON DELETE CASCADE
 );
 
--- 3. Airports Table: Optimized bridge table mapping cities to their airport IATA codes
+-- 3. Airports Table: Optimized bridge table mapping cities to their airport ICAO codes
 CREATE TABLE airports (
-    arrival_iata VARCHAR(3),
+    arrival_icao VARCHAR(4), 
     city_id INT,
-    PRIMARY KEY (arrival_iata),
+    PRIMARY KEY (arrival_icao), 
     FOREIGN KEY (city_id) REFERENCES city(city_id) ON DELETE CASCADE
 );
 
@@ -49,14 +49,15 @@ CREATE TABLE weather (
     UNIQUE KEY unique_weather (city_id, forecast_time)
 );
 
--- 5. Flight Table: Tracks incoming flights with unique anti-duplication constraints based on IATA codes
+-- 5. Flight Table: Tracks incoming flights with unique anti-duplication constraints based on ICAO codes
 CREATE TABLE flight (
     flight_id INT AUTO_INCREMENT,
     flight_num VARCHAR(25),
-    departure_icao VARCHAR(25),
+    departure_icao VARCHAR(4),
     arrival_time DATETIME,
-    arrival_iata VARCHAR(3),
+    arrival_icao VARCHAR(4), 
+    city_name VARCHAR(100),   
     PRIMARY KEY (flight_id),
-    FOREIGN KEY (arrival_iata) REFERENCES airports(arrival_iata) ON DELETE CASCADE,
-    UNIQUE KEY unique_flight (flight_num, arrival_time, arrival_iata)
+    FOREIGN KEY (arrival_icao) REFERENCES airports(arrival_icao) ON DELETE CASCADE, 
+    UNIQUE KEY unique_flight (flight_num, arrival_time, arrival_icao) 
 );
