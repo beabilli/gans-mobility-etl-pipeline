@@ -15,10 +15,12 @@ The goal of this project was to design and optimize an ETL (Extract, Transform, 
 ## 📐 Data Architecture & Database Optimization
 The database architecture was engineered to be fully dynamic, moving past static data limitations and protecting historical records through advanced Data Engineering practices.
 
+<img width="963" height="673" alt="Screenshot 2026-07-27 alle 12 08 41" src="https://github.com/user-attachments/assets/eab88493-5256-4722-84a3-4ca5b7a36d36" />
+
 ### Repository File Structure:
-* **1.0 city_population_sql_import.ipynb:** Extracts and loads core city master data and historical demographic records into the MySQL database.
-* **2.0 Extract weather infos copia.ipynb:** ETL script that extracts and tracks dynamic 5-day weather forecasts via API.
-* **3.0 Flights Dataframe Creation.ipynb:** ETL script that monitors incoming tourist streams, optimized to handle the strict 12-hour window limit imposed by the flights API.
+* **1.0 city_population_sql_import.py:** Extracts and loads core city master data and historical demographic records into the MySQL database.
+* **2.0 extract_weather_infos.py:** ETL script that extracts and tracks dynamic 5-day weather forecasts via API.
+* **3.0 flights_df_creation.py:** ETL script that monitors incoming tourist streams, optimized to handle the strict 12-hour window limit imposed by the flights API.
 * **define schemas.sql:** The official database schema including constraints, primary keys, and foreign keys.
 
 ### 🏆 Key Design Choices & Technical Solutions:
