@@ -17,11 +17,23 @@ The database architecture was engineered to be fully dynamic, moving past static
 
 <img width="963" height="673" alt="Screenshot 2026-07-27 alle 12 08 41" src="https://github.com/user-attachments/assets/eab88493-5256-4722-84a3-4ca5b7a36d36" />
 
-### Repository File Structure:
-* **1.0 city_population_sql_import.py:** Extracts and loads core city master data and historical demographic records into the MySQL database.
-* **2.0 extract_weather_infos.py:** ETL script that extracts and tracks dynamic 5-day weather forecasts via API.
-* **3.0 flights_df_creation.py:** ETL script that monitors incoming tourist streams, optimized to handle the strict 12-hour window limit imposed by the flights API.
-* **define schemas.sql:** The official database schema including constraints, primary keys, and foreign keys.
+---
+
+## 📂 Project Structure
+
+```text
+gans-mobility-etl-pipelinel/
+┣ 📂 images/
+┃ ┗ 📄 database_schema.png        # MySQL Reverse Engineered EER diagram showing table relationships
+┣ 📂 sql/
+┃ ┗ 📄 define_schemas.sql         # Official database schema with constraints, PKs, and FKs
+┣ 📂 src/
+┃ ┣ 📄 1.0_city_population_sql_import.py     # Extracts and loads core city data and demographics into MySQL
+┃ ┣ 📄 2.0_extract_weather_infos.py                # ETL script to extract and track dynamic 5-day weather forecasts via API
+┃ ┗ 📄 3.0_flights_df_creation.py               # ETL script to monitor incoming tourist arrivals within a 12-hour window
+┗ 📄 README.md                    # Project documentation, architecture summary, and design choices
+```
+---
 
 ### 🏆 Key Design Choices & Technical Solutions:
 * **Database Optimization (ICAO Design):** Departing from the rigid theoretical layout, I optimized the schema by consolidating airport registries into a single, streamlined airports table based on ICAO codes (4 letters). This aligns perfectly with international aviation tracking standards and keeps table relationships highly efficient.
