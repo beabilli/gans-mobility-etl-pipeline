@@ -28,9 +28,9 @@ gans-mobility-etl-pipelinel/
 ┣ 📂 sql/
 ┃ ┗ 📄 define_schemas.sql         # Official database schema with constraints, PKs, and FKs
 ┣ 📂 src/
-┃ ┣ 📄 1.0_city_population_sql_import.py     # Extracts and loads core city data and demographics into MySQL
+┃ ┣ 📄 1.0_city_population_sql_import.py           # Extracts and loads core city data and demographics into MySQL
 ┃ ┣ 📄 2.0_extract_weather_infos.py                # ETL script to extract and track dynamic 5-day weather forecasts via API
-┃ ┗ 📄 3.0_flights_df_creation.py               # ETL script to monitor incoming tourist arrivals within a 12-hour window
+┃ ┗ 📄 3.0_flights_df_creation.py                  # ETL script to monitor incoming tourist arrivals within a 12-hour window
 ┗ 📄 README.md                    # Project documentation, architecture summary, and design choices
 ```
 ---
